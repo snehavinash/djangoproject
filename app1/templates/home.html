@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% for msg in messages %}
+    {{ msg }}
+    {% endfor %}
+
+    <center>
+    <div class="container" style="background-color:aquamarine; width: 700px; height: 300px;">
+        
+    
+
+    <br>
+    
+
+    {{ user.id }}
+    {{ user.Name}}<br>
+    {{user.Place}}<br>
+    {{user.Email}}<br>
+
+
+
+    <img src="{{user.Photo.url}}" alt="" height="100px" width="100px">
+    <br>
+    <br>
+    
+    <a href="{% url 'app1:update' user.id  %}">Update</a>&ensp;
+    <a href="{% url 'app1:changepassword' user.id %}">Changepassword</a>&ensp;
+    <a href="{% url 'app1:logout' %}">Logout</a></div>
+</center>
+<br>
+<br>
+{% endblock %}
